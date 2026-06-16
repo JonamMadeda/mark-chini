@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    mark_chini_cleaner_lib::run()
+    mark_chini_lib::run()
 }

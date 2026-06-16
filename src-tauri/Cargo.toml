@@ -1,5 +1,5 @@
 [package]
-name = "mark-chini-cleaner"
+name = "mark-chini"
 version = "1.0.0"
 edition = "2021"
 description = "Local-first Markdown-to-PDF converter with live preview"
@@ -7,7 +7,7 @@ authors = ["MarkChini"]
 license = "MIT"
 
 [lib]
-name = "mark_chini_cleaner_lib"
+name = "mark_chini_lib"
 crate-type = ["lib", "cdylib", "staticlib"]
 
 [build-dependencies]
