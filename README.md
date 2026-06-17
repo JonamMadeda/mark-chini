@@ -3,7 +3,7 @@
 **A local-first Markdown-to-PDF desktop app** — zero external API calls, instant live preview, native PDF export via headless Chromium.
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
-[![Download Latest](https://img.shields.io/github/v/release/JonamMadeda/markchini-cleaner?label=Download&color=blue)](https://github.com/JonamMadeda/markchini-cleaner/releases/latest)
+[![Download Latest](https://img.shields.io/github/v/release/JonamMadeda/mark-chini?label=Download&color=blue)](https://github.com/JonamMadeda/mark-chini/releases/latest)
 
 ## Features
 
@@ -24,7 +24,7 @@
 
 ### Windows
 
-1. Go to the [latest release](https://github.com/JonamMadeda/markchini-cleaner/releases/latest)
+1. Go to the [latest release](https://github.com/JonamMadeda/mark-chini/releases/latest)
 2. Download the `.msi` installer
 3. Run the installer — it will register MarkChini in "Add or Remove Programs"
 4. Launch from Start Menu or Desktop shortcut
@@ -41,7 +41,7 @@
 choco install wixtoolset --version 3.14.1 -y
 
 # Clone and build
-git clone https://github.com/JonamMadeda/markchini-cleaner.git
+git clone https://github.com/JonamMadeda/mark-chini.git
 cd markchini-cleaner/src-tauri
 cargo tauri build --bundles msi
 ```
@@ -70,7 +70,7 @@ MarkChini checks for updates automatically on startup. When a new version is ava
 2. The update downloads silently in the background
 3. The app restarts with the new version installed
 
-You can also download the latest `.msi` from the [releases page](https://github.com/JonamMadeda/markchini-cleaner/releases) and install manually — the installer replaces the previous version.
+You can also download the latest `.msi` from the [releases page](https://github.com/JonamMadeda/mark-chini/releases) and install manually — the installer replaces the previous version.
 
 ## Architecture
 

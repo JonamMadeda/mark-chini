@@ -58,12 +58,12 @@ jobs:
 
           $UPDATE_JSON = @{
             version = $VERSION
-            notes = "See https://github.com/JonamMadeda/markchini-cleaner/releases/tag/v$VERSION"
+            notes = "See https://github.com/JonamMadeda/mark-chini/releases/tag/v$VERSION"
             pub_date = (Get-Date -Format "yyyy-MM-ddTHH:mm:ssZ")
             platforms = @{
               "windows-x86_64" = @{
                 signature = $SIGNATURE
-                url = "https://github.com/JonamMadeda/markchini-cleaner/releases/download/${{ github.ref_name }}/$($MSI_FILE.Name).zip"
+                url = "https://github.com/JonamMadeda/mark-chini/releases/download/${{ github.ref_name }}/$($MSI_FILE.Name).zip"
               }
             }
           }
@@ -92,7 +92,7 @@ jobs:
             - Requires Google Chrome or Microsoft Edge for PDF export
 
             ### Changelog
-            See [commits](https://github.com/JonamMadeda/markchini-cleaner/compare/${{ github.ref_name }}) for full changelog.
+            See [commits](https://github.com/JonamMadeda/mark-chini/compare/${{ github.ref_name }}) for full changelog.
           draft: false
           prerelease: false
           files: |
