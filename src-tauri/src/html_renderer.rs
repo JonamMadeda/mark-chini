@@ -12,12 +12,6 @@ padding: 0;
 @page {
 size: a4;
 margin: 2.5cm;
-@bottom-center {
-content: counter(page);
-font-family: "Georgia", "Times New Roman", serif;
-font-size: 9pt;
-color: #666;
-}
 }
 body {
 font-family: "Georgia", "Times New Roman", serif;
@@ -348,9 +342,24 @@ fn html_to_pdf(html: &str) -> Result<Vec<u8>, String> {
         let tab = browser.new_tab().map_err(|e| e.to_string())?;
         tab.navigate_to(&file_url).map_err(|e| e.to_string())?;
         tab.wait_until_navigated().map_err(|e| e.to_string())?;
+        // Use explicit paper size and margins in inches (2.5cm ≈ 0.984in).
+        // Disable prefer_css_page_size so Chrome never re-reads @page per page.
+        // Use native footer_template for page numbers instead of CSS @bottom-center
+        // to avoid Chrome margin-box bugs on long documents.
         let pdf_opts = PrintToPdfOptions {
             print_background: Some(true),
-            prefer_css_page_size: Some(true),
+            prefer_css_page_size: Some(false),
+            paper_width: Some(8.27),
+            paper_height: Some(11.69),
+            margin_top: Some(0.984),
+            margin_bottom: Some(0.984),
+            margin_left: Some(0.984),
+            margin_right: Some(0.984),
+            display_header_footer: Some(true),
+            header_template: Some(String::new()),
+            footer_template: Some(
+                r#"<div style="width:100%;text-align:center;font-family:Georgia,'Times New Roman',serif;font-size:9pt;color:#666;">Page <span class="pageNumber"></span></div>"#.to_string(),
+            ),
             ..Default::default()
         };
         tab.print_to_pdf(Some(pdf_opts)).map_err(|e| e.to_string())
