@@ -5,6 +5,12 @@ const CSS: &str = r#"@media print {
 @page {
 size: a4;
 margin: 2.5cm !important;
+@bottom-center {
+content: counter(page);
+font-family: "Georgia", "Times New Roman", serif;
+font-size: 9pt;
+color: #666;
+}
 }
 body {
 font-family: "Georgia", "Times New Roman", serif;
